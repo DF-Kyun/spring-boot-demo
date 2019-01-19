@@ -13,6 +13,7 @@ import java.nio.charset.StandardCharsets;
 
 /**
  * REST配置.
+ * 使用 Apache HttpClient 作为 REST 客户端。Apache HttpClient 内置了对于 GZIP 的支持
  */
 @Configuration
 public class RestConfiguration {
