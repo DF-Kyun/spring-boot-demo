@@ -12,4 +12,8 @@
 
 ## kettle-server
 通过封装kettle API，提供服务，创建kettle转换及作业  
-1、具体测试参数类
+1、具体测试参数类com.dfkyun.kettleserver.test.Test  
+2、主要有两部分，job、trans，分别保存作业和转换  
+3、主要方式是通过操作 templates下的模板xml文件，生成对应的对象  
+4、主要代码思路来自于开源webkettle工程，精卫平台（似乎是叫这个名），在此感谢          
+
