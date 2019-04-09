@@ -65,7 +65,7 @@ public class JobGraphServiceImpl implements JobGraphService {
         Repository repository = null;
         GraphCodec codec = (GraphCodec) PluginFactory.getBean(GraphCodec.JOB_CODEC);
         String graphXml = getJobXml(jobName, type, jo);
-        System.out.println(StringEscapeHelper.decode(graphXml));
+        // System.out.println(StringEscapeHelper.decode(graphXml));
         JobMeta jobMeta = (JobMeta) codec.decode(StringEscapeHelper.decode(graphXml));
         repository = App.getInstance().getRepository();
         ObjectId existingId = repository.getJobId(jobMeta.getName(), jobMeta.getRepositoryDirectory());

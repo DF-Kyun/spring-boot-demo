@@ -53,6 +53,7 @@ public class Test {
         step3.put("connection","orcl_57_test");
         step3.put("fields",fieldsJa);
         step3.put("table","QYK_tb_Corp_CompanyInfo)");
+        step3.put("schema","MDM");
         jo.put("step3",step3);
 
         String column = "SOCIALCREDITCODE";
@@ -77,6 +78,7 @@ public class Test {
         step6.put("connection","orcl_57_test");
         step6.put("fields",failFieldsJa);
         step6.put("table","QYK_tb_Corp_CompanyInfo)");
+        step6.put("schema","MDM");
         jo.put("step6",step6);
 
         jo.put("type", TaskType.TASK_TYPE_CENTRAL_REPOSITORY);
@@ -104,6 +106,7 @@ public class Test {
         step2.put("connection","orcl_57_test");
         step2.put("fields",fieldsJa);
         step2.put("table","SYS_SJQXGL)");
+        step2.put("schema","MDM");
         jo.put("step2",step2);
 
         Map<String,Object> step4 = new HashMap<String,Object>();

@@ -74,7 +74,7 @@ public class TransGraphServiceImpl implements TransGraphService {
 
         }
 
-        System.out.println(StringEscapeHelper.decode(graphXml));
+        // System.out.println(StringEscapeHelper.decode(graphXml));
         AbstractMeta transMeta = codec.decode(StringEscapeHelper.decode(graphXml));
         repository = App.getInstance().getRepository();
         DelegatingMetaStore metaStore = App.getInstance().getMetaStore();
@@ -167,6 +167,9 @@ public class TransGraphServiceImpl implements TransGraphService {
                         if("table".equals(attrName)){
                             attr.setValue((String) step3.get("table"));
                         }
+                        if("schema".equals(attrName)){
+                            attr.setValue((String) step3.get("schema"));
+                        }
                     }
                 }
 
@@ -194,6 +197,9 @@ public class TransGraphServiceImpl implements TransGraphService {
                         }
                         if("table".equals(attrName)){
                             attr.setValue((String) step6.get("table"));
+                        }
+                        if("schema".equals(attrName)){
+                            attr.setValue((String) step6.get("schema"));
                         }
                     }
                 }
@@ -247,6 +253,9 @@ public class TransGraphServiceImpl implements TransGraphService {
                         }
                         if("table".equals(attrName)){
                             attr.setValue((String) step2.get("table"));
+                        }
+                        if("schema".equals(attrName)){
+                            attr.setValue((String) step2.get("schema"));
                         }
                     }
                 }
