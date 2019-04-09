@@ -1,0 +1,53 @@
+<mxGraphModel>
+  <root>
+    <mxCell id="0"/>
+        <Info capture_step_performance="N" clusterSchemas="[]" created_date="2019/03/27 10:04:48.000" created_user="-" databases="" description="" directory="/" extended_description="" feedback_shown="Y" feedback_size="50000" fileName="" is_key_private="N" key_for_session_key="" modified_date="2019/03/29 14:27:01.000" modified_user="admin" name="123" parameters="[]" partitionSchemas="[]" id="1">
+      <mxCell parent="0"/>
+    </Info>
+    <Step connection="" copies="1" ctype="TableInput" distribute="N" draw="Y" execute_each_row="N" label="临时库" lazy_conversion_active="N" limit="0" lookup="" partitioning="{&quot;method&quot;:&quot;none&quot;,&quot;schema_name&quot;:&quot;&quot;}" sql="" supports_error_handing="N" variables_active="N" id="2">
+      <mxCell style="icon;image=ui/images/TIP.svg?scale=32" parent="1" vertex="1">
+        <mxGeometry x="172" y="253" width="37" height="37" as="geometry"/>
+      </mxCell>
+    </Step>
+    <Step commit="1000" connection="" copies="1" ctype="TableOutput" distribute="Y" draw="Y" fields="" ignore_errors="N" label="基础库" partitioning="{&quot;method&quot;:&quot;none&quot;,&quot;schema_name&quot;:&quot;&quot;}" partitioning_daily="N" partitioning_enabled="N" partitioning_field="" partitioning_monthly="Y" return_field="" return_keys="N" schema="" specify_fields="Y" supports_error_handing="Y" table="" tablename_field="" tablename_in_field="N" tablename_in_table="Y" truncate="Y" use_batch="N" id="3">
+      <mxCell style="icon;image=ui/images/TOP.svg?scale=32" parent="1" vertex="1">
+        <mxGeometry x="604" y="141" width="37" height="37" as="geometry"/>
+      </mxCell>
+    </Step>
+    <Step copies="1" ctype="GetVariable" distribute="Y" draw="Y" fields="" label="获取变量" partitioning="{&quot;method&quot;:&quot;none&quot;,&quot;schema_name&quot;:&quot;&quot;}" supports_error_handing="N" id="4">
+      <mxCell style="icon;image=ui/images/GVA.svg?scale=32" parent="1" vertex="1">
+        <mxGeometry x="268" y="141" width="37" height="37" as="geometry"/>
+      </mxCell>
+    </Step>
+    <Step condition="" copies="1" ctype="FilterRows" distribute="Y" draw="Y" label="过滤记录" partitioning="{&quot;method&quot;:&quot;none&quot;,&quot;schema_name&quot;:&quot;&quot;}" send_false_to="问题库" send_true_to="基础库" supports_error_handing="N" id="5">
+      <mxCell style="icon;image=ui/images/FLT.svg?scale=32" parent="1" vertex="1">
+        <mxGeometry x="464" y="176" width="37" height="37" as="geometry"/>
+      </mxCell>
+    </Step>
+    <Step commit="1000" connection="" copies="1" ctype="TableOutput" distribute="Y" draw="Y" fields="" ignore_errors="N" label="问题库" partitioning="{&quot;method&quot;:&quot;none&quot;,&quot;schema_name&quot;:&quot;&quot;}" partitioning_daily="N" partitioning_enabled="N" partitioning_field="" partitioning_monthly="Y" return_field="" return_keys="N" schema="" specify_fields="Y" supports_error_handing="Y" table="" tablename_field="" tablename_in_field="N" tablename_in_table="Y" truncate="Y" use_batch="N" id="6">
+      <mxCell style="icon;image=ui/images/TOP.svg?scale=32" parent="1" vertex="1">
+        <mxGeometry x="588" y="285" width="37" height="37" as="geometry"/>
+      </mxCell>
+    </Step>
+    <TransHop enabled="Y" from="临时库" to="获取变量" id="7">
+      <mxCell parent="1" source="2" target="4" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </TransHop>
+    <TransHop enabled="Y" from="过滤记录" to="基础库" id="8">
+      <mxCell parent="1" source="5" target="3" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </TransHop>
+    <TransHop enabled="N" from="过滤记录" to="问题库" id="9">
+      <mxCell parent="1" source="5" target="6" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </TransHop>
+    <TransHop enabled="Y" from="获取变量" to="过滤记录" id="10">
+      <mxCell parent="1" source="4" target="5" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </TransHop>
+  </root>
+</mxGraphModel>
