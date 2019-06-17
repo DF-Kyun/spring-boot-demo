@@ -9,4 +9,5 @@ public interface TransGraphService {
 
     public KettleServerResponse saveTrans(String transName, String type, JSONObject jo) throws Exception;
 
+    public KettleServerResponse deleteTransformation(String transPath) throws Exception;
 }

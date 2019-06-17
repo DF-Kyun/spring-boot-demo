@@ -9,4 +9,5 @@ public interface JobGraphService {
 
     public KettleServerResponse saveJob(String jobName, String type, JSONObject jo) throws Exception;
 
+    public KettleServerResponse deleteJob(String jobPath) throws Exception;
 }

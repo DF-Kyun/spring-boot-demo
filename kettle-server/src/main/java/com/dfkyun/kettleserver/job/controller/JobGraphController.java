@@ -35,5 +35,26 @@ public class JobGraphController {
 
 		return result;
 	}
+
+	@PostMapping("update")
+	protected KettleServerResponse update(@RequestParam String paramJson) throws Exception{
+
+		JSONObject jo = (JSONObject) JSONObject.parse(paramJson);
+		String type = (String) jo.get("type");
+		String jobName = (String) jo.get("jobName");
+		String extdes = (String) jo.get("extended_description");
+
+		KettleServerResponse result = jobGraphService.saveJob(jobName, extdes, jo);
+
+		return result;
+	}
+
+	@PostMapping("delete")
+	protected KettleServerResponse delete(@RequestParam String jobPath) throws Exception{
+
+		KettleServerResponse result =  jobGraphService.deleteJob(jobPath);
+
+		return result;
+	}
 	
 }

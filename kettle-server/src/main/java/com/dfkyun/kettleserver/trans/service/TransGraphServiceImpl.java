@@ -330,4 +330,20 @@ public class TransGraphServiceImpl implements TransGraphService {
         return xmlString;
     }
 
+    @Override
+    public KettleServerResponse deleteTransformation(String transPath) throws Exception {
+        Repository repository = App.getInstance().getRepository();
+        String dir = transPath.substring(0, transPath.lastIndexOf("/"));
+        String name = transPath.substring(transPath.lastIndexOf("/") + 1);
+        // 删除转换
+        RepositoryDirectoryInterface directory = repository.findDirectory(dir);
+        if(directory == null){
+            directory = repository.getUserHomeDirectory();
+        }
+        ObjectId id = repository.getTransformationID(name, directory);
+        repository.deleteTransformation(id);
+
+        return ResponseUtils.success("success", "转化删除成功");
+    }
+
     }

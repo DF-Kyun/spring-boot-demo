@@ -162,4 +162,20 @@ public class JobGraphServiceImpl implements JobGraphService {
         xmlString = document.asXML();
         return xmlString;
     }
+
+    @Override
+    public KettleServerResponse deleteJob(String jobPath) throws Exception {
+        Repository repository = App.getInstance().getRepository();
+        String dir = jobPath.substring(0, jobPath.lastIndexOf("/"));
+        String name = jobPath.substring(jobPath.lastIndexOf("/") + 1);
+        // 删除作业
+        RepositoryDirectoryInterface directory = repository.findDirectory(dir);
+        if(directory == null){
+            directory = repository.getUserHomeDirectory();
+        }
+        ObjectId id = repository.getJobId(name, directory);
+        repository.deleteJob(id);
+
+        return ResponseUtils.success("success","作业删除成功！");
+    }
 }
