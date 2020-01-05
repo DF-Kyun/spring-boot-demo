@@ -7,10 +7,10 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 
 @SpringBootApplication
 @EnableConfigurationProperties(BrowserProperties.class)
-public class Oauth2DemoApplication {
+public class SecurityDemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Oauth2DemoApplication.class, args);
+		SpringApplication.run(SecurityDemoApplication.class, args);
 	}
 
 }

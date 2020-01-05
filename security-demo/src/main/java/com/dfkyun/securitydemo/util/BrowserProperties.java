@@ -10,4 +10,6 @@ public class BrowserProperties {
     private String loginPage;
 
     private LoginType loginType;
+
+    private ImageCodeProperties image = new ImageCodeProperties();
 }
