@@ -1,6 +1,6 @@
-package com.dfkyun.oauth2demo;
+package com.dfkyun.securitydemo;
 
-import com.dfkyun.oauth2demo.util.BrowserProperties;
+import com.dfkyun.securitydemo.util.BrowserProperties;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;

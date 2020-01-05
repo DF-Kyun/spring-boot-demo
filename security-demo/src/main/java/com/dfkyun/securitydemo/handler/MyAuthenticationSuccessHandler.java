@@ -1,7 +1,7 @@
-package com.dfkyun.oauth2demo.handler;
+package com.dfkyun.securitydemo.handler;
 
-import com.dfkyun.oauth2demo.util.BrowserProperties;
-import com.dfkyun.oauth2demo.util.LoginType;
+import com.dfkyun.securitydemo.util.BrowserProperties;
+import com.dfkyun.securitydemo.util.LoginType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

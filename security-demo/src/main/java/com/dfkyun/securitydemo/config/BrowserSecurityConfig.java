@@ -1,12 +1,11 @@
-package com.dfkyun.oauth2demo.config;
+package com.dfkyun.securitydemo.config;
 
-import com.dfkyun.oauth2demo.handler.MyAuthenticationFailHandler;
-import com.dfkyun.oauth2demo.handler.MyAuthenticationSuccessHandler;
-import com.dfkyun.oauth2demo.util.BrowserProperties;
+import com.dfkyun.securitydemo.handler.MyAuthenticationFailHandler;
+import com.dfkyun.securitydemo.handler.MyAuthenticationSuccessHandler;
+import com.dfkyun.securitydemo.util.BrowserProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

@@ -1,4 +1,4 @@
-package com.dfkyun.oauth2demo.controller;
+package com.dfkyun.securitydemo.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

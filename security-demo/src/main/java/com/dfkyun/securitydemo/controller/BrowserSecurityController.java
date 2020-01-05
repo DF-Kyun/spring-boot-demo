@@ -1,6 +1,6 @@
-package com.dfkyun.oauth2demo.controller;
+package com.dfkyun.securitydemo.controller;
 
-import com.dfkyun.oauth2demo.util.SimpleResponse;
+import com.dfkyun.securitydemo.util.SimpleResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.web.DefaultRedirectStrategy;
