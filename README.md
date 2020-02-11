@@ -18,7 +18,7 @@
 4、主要代码思路来自于开源webkettle工程，精卫平台（似乎是叫这个名），在此感谢         
 
 ## security-demo
-认证工程  
+认证工程，通过spring-boot-security开发一个简单的认证工程  
 1、添加验证码功能
 
 
