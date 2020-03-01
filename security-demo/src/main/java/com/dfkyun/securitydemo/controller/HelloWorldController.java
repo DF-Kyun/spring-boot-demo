@@ -1,18 +1,20 @@
 package com.dfkyun.securitydemo.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
 
-@RestController
+@Controller
 public class HelloWorldController {
 
+    @RequestMapping("/")
+    public String index() {
+        return "/index.html";
+    }
+
     @RequestMapping("/hello")
+    @ResponseBody
     public String hello() {
         return "Hello World";
     }
 
-    @RequestMapping("/index")
-    public String index() {
-        return "index";
-    }
 }

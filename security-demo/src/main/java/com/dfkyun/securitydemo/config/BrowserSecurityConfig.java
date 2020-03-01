@@ -47,12 +47,12 @@ public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter {
                 .failureHandler(myAuthenticationFailHandler)
                 .and()
                 .authorizeRequests()
-                .antMatchers(loginPage,"/index", "/code/image","/authentication/require").permitAll()
+                .antMatchers(loginPage,"/", "/code/image","/authentication/require").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()
                 .logout()
-                .logoutSuccessUrl("/index")
+                .logoutSuccessUrl("/")
                 .and()
                 .csrf().disable();
     }
