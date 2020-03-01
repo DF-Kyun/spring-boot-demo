@@ -20,7 +20,6 @@
 ## security-demo
 认证工程，通过spring-boot-security开发一个简单的认证工程  
 1、自定义登录页面，添加验证码功能
-
 2、添加用户信息显示功能
 
 
